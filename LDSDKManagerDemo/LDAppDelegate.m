@@ -26,31 +26,22 @@
      *  @brief  批量注册第三方SDK
      */
     NSArray *regPlatformConfigList = @[
-        @{
-            LDSDKConfigAppIdKey : @"XXX",
-            LDSDKConfigAppSecretKey : @"XXX",
-            LDSDKConfigAppDescriptionKey :
-                [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"],
-            LDSDKConfigAppPlatformTypeKey : @(LDSDKPlatformWeChat)
-        },
-        @{
-            LDSDKConfigAppIdKey : @"XXX",
-            LDSDKConfigAppSecretKey : @"xXXX",
-            LDSDKConfigAppPlatformTypeKey : @(LDSDKPlatformQQ)
-        },
-        @{
-            LDSDKConfigAppIdKey : @"XXX",
-            LDSDKConfigAppSecretKey : @"XXX",
-            LDSDKConfigAppPlatformTypeKey : @(LDSDKPlatformYiXin)
-        },
-        @{
-            LDSDKConfigAppSchemeKey : @"XXX",
-            LDSDKConfigAppPlatformTypeKey : @(LDSDKPlatformAliPay)
-        },
-        @{ LDSDKConfigAppIdKey : @"XXX",
-           LDSDKConfigAppPlatformTypeKey : @(LDSDKPlatformWeibo) },
-    ];
-
+                                       @{
+                                           LDSDKConfigAppIdKey:@"wxdb0c3a0c4bbf44e3",
+                                           LDSDKConfigAppSecretKey:@"95b34122e7290936191dee31f28e52ae",
+                                           LDSDKConfigAppDescriptionKey:@"应用描述",
+                                           LDSDKConfigAppPlatformTypeKey:@(LDSDKPlatformWeChat)
+                                           },
+                                       @{
+                                           LDSDKConfigAppIdKey:@"1105102570",
+                                           LDSDKConfigAppSecretKey:@"V29vITojtdBrVe01",
+                                           LDSDKConfigAppPlatformTypeKey:@(LDSDKPlatformQQ)
+                                           },
+                                       @{
+                                           LDSDKConfigAppSchemeKey:@"safealipay",
+                                           LDSDKConfigAppPlatformTypeKey:@(LDSDKPlatformAliPay)
+                                           },
+                                       ];
     [LDSDKManager registerWithPlatformConfigList:regPlatformConfigList];
 
     LDViewController *view = [[LDViewController alloc] init];

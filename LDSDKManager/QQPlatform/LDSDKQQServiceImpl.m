@@ -10,7 +10,7 @@
 #import "UIImage+LDSDKShare.h"
 
 #import <TencentOpenAPI/QQApiInterface.h>
-#import <TencentOpenAPI/QQApi.h>
+//#import <TencentOpenAPI/QQApi.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/TencentApiInterface.h>
 #import <TencentOpenAPI/QQApiInterface.h>
@@ -61,7 +61,7 @@ static NSArray *permissions = nil;
 //判断平台是否可用
 - (BOOL)isPlatformAppInstalled
 {
-    return [QQApi isQQInstalled] && [QQApi isQQSupportApi];
+    return [QQApiInterface isQQInstalled] && [QQApiInterface isQQSupportApi];
 }
 
 //注册平台
@@ -117,7 +117,7 @@ static NSArray *permissions = nil;
 
 - (void)loginToPlatformWithCallback:(LDSDKLoginCallback)callback
 {
-    if (![QQApi isQQInstalled] || ![QQApi isQQSupportApi]) {
+    if (![QQApiInterface isQQInstalled] || ![QQApiInterface isQQSupportApi]) {
         error = [NSError
             errorWithDomain:@"QQLogin"
                        code:0
@@ -129,7 +129,7 @@ static NSArray *permissions = nil;
         }
         return;
     }
-    if ([QQApi isQQInstalled]) {  //手机QQ登录流程
+    if ([QQApiInterface isQQInstalled]) {  //手机QQ登录流程
         NSLog(@"login by QQ oauth = %@", tencentOAuth);
         if (callback) {
             MyBlock = callback;
@@ -161,7 +161,7 @@ static NSArray *permissions = nil;
              shareModule:(NSUInteger)shareModule
               onComplete:(LDSDKShareCallback)complete
 {
-    if (![QQApi isQQInstalled] || ![QQApi isQQSupportApi]) {
+    if (![QQApiInterface isQQInstalled] || ![QQApiInterface isQQSupportApi]) {
         error = [NSError
             errorWithDomain:@"QQShare"
                        code:0

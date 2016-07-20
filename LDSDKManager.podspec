@@ -31,33 +31,33 @@ Pod::Spec.new do |s|
     end
 
     #微信平台SDK集成
-    s.subspec 'WechatPlatform' do |ss|
-        ss.public_header_files = 'LDSDKManager/WechatPlatform/WeChatSDK/*.h'
-        ss.source_files = 'LDSDKManager/WechatPlatform/**/*.{h,m,mm}'
-        ss.vendored_library = 'LDSDKManager/WechatPlatform/WeChatSDK/libWeChatSDK.a'
-        ss.frameworks = 'MobileCoreServices', 'SystemConfiguration'
-        ss.libraries = 'z', 'sqlite3.0', 'c++'
-        ss.dependency 'LDSDKManager/CoreService'
-    end
+#    s.subspec 'WechatPlatform' do |ss|
+#        ss.public_header_files = 'LDSDKManager/WechatPlatform/WeChatSDK/*.h'
+#        ss.source_files = 'LDSDKManager/WechatPlatform/**/*.{h,m,mm}'
+#        ss.vendored_library = 'LDSDKManager/WechatPlatform/WeChatSDK/libWeChatSDK.a'
+#        ss.frameworks = 'MobileCoreServices', 'SystemConfiguration'
+#        ss.libraries = 'z', 'sqlite3.0', 'c++'
+#        ss.dependency 'LDSDKManager/CoreService'
+#    end
 
     #易信平台SDK集成
-    s.subspec 'YixinPlatform' do |ss|
-        ss.public_header_files = 'LDSDKManager/YixinPlatform/YiXinSDK/*.h'
-        ss.source_files = 'LDSDKManager/YixinPlatform/**/*.{h,m,mm}'
-        ss.vendored_library = 'LDSDKManager/YixinPlatform/YiXinSDK/libYixinSDK.a'
-        ss.dependency 'LDSDKManager/CoreService'
-    end
+#    s.subspec 'YixinPlatform' do |ss|
+#        ss.public_header_files = 'LDSDKManager/YixinPlatform/YiXinSDK/*.h'
+#        ss.source_files = 'LDSDKManager/YixinPlatform/**/*.{h,m,mm}'
+#        ss.vendored_library = 'LDSDKManager/YixinPlatform/YiXinSDK/libYixinSDK.a'
+#        ss.dependency 'LDSDKManager/CoreService'
+#    end
 
     #新浪微博平台SDK集成
-    s.subspec 'WeiboPlatform' do |ss|
-        ss.public_header_files = 'LDSDKManager/WeiboPlatform/libWeiboSDK/*.h'
-        ss.source_files = 'LDSDKManager/WeiboPlatform/**/*{h,m,mm}'
-        ss.vendored_library = 'LDSDKManager/WeiboPlatform/libWeiboSDK/libWeiboSDK.a'
-        ss.resources = ['LDSDKManager/WeiboPlatform/**/*.{bundle}']
-        ss.framework = 'QuartzCore','ImageIO','SystemConfiguration','Security','CoreTelephony','CoreText'
-        ss.libraries = 'z', 'sqlite3.0'
-        ss.dependency 'LDSDKManager/CoreService'
-    end
+#    s.subspec 'WeiboPlatform' do |ss|
+#        ss.public_header_files = 'LDSDKManager/WeiboPlatform/libWeiboSDK/*.h'
+#        ss.source_files = 'LDSDKManager/WeiboPlatform/**/*{h,m,mm}'
+#        ss.vendored_library = 'LDSDKManager/WeiboPlatform/libWeiboSDK/libWeiboSDK.a'
+#        ss.resources = ['LDSDKManager/WeiboPlatform/**/*.{bundle}']
+#        ss.framework = 'QuartzCore','ImageIO','SystemConfiguration','Security','CoreTelephony','CoreText'
+#        ss.libraries = 'z', 'sqlite3.0'
+#        ss.dependency 'LDSDKManager/CoreService'
+#    end
 
     #支付宝平台SDK集成
     s.subspec 'AlipayPlatform' do |ss|
@@ -69,5 +69,5 @@ Pod::Spec.new do |s|
         ss.dependency 'LDSDKManager/CoreService'
     end
 
-    s.frameworks = 'UIKit', 'CoreGraphics', 'Foundation'
+    s.frameworks = 'UIKit', 'CoreGraphics', 'Foundation', 'CoreMotion'
 end

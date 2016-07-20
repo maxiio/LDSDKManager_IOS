@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.cocoapods.demo.LDShare-Example</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -29,7 +29,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxc133b9XXXXX</string>
+				<string>wxdb0c3a0c4bbf44e3</string>
 			</array>
 		</dict>
 		<dict>
@@ -39,17 +39,7 @@
 			<string>QQ</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent11XXXXX</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>yixin</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>yx778ae2bc7aXXXX</string>
+				<string>tencent1105102570</string>
 			</array>
 		</dict>
 		<dict>
@@ -57,24 +47,63 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>alisdkXXXXX</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>weibo</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wb2286XXXXX</string>
+				<string>safealipay</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>mqqbrowser</string>
+        <string>mqqopensdkapiV2</string>
+        <string>mqqapi</string>
+        <string>mqq</string>
+        <string>wechat</string>
+        <string>weixin</string>
+    </array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>akamaihd.net</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>facebook.com</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>fbcdn.net</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>qq.com</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+        </dict>
+    </dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
