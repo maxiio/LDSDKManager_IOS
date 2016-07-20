@@ -31,14 +31,14 @@ Pod::Spec.new do |s|
     end
 
     #微信平台SDK集成
-#    s.subspec 'WechatPlatform' do |ss|
-#        ss.public_header_files = 'LDSDKManager/WechatPlatform/WeChatSDK/*.h'
-#        ss.source_files = 'LDSDKManager/WechatPlatform/**/*.{h,m,mm}'
-#        ss.vendored_library = 'LDSDKManager/WechatPlatform/WeChatSDK/libWeChatSDK.a'
-#        ss.frameworks = 'MobileCoreServices', 'SystemConfiguration'
-#        ss.libraries = 'z', 'sqlite3.0', 'c++'
-#        ss.dependency 'LDSDKManager/CoreService'
-#    end
+    s.subspec 'WechatPlatform' do |ss|
+        ss.public_header_files = 'LDSDKManager/WechatPlatform/WeChatSDK/*.h'
+        ss.source_files = 'LDSDKManager/WechatPlatform/**/*.{h,m,mm}'
+        ss.vendored_library = 'LDSDKManager/WechatPlatform/WeChatSDK/libWeChatSDK.a'
+        ss.frameworks = 'MobileCoreServices', 'SystemConfiguration'
+        ss.libraries = 'z', 'sqlite3.0', 'c++'
+        ss.dependency 'LDSDKManager/CoreService'
+    end
 
     #易信平台SDK集成
 #    s.subspec 'YixinPlatform' do |ss|
