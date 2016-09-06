@@ -20,25 +20,25 @@ Pod::Spec.new do |s|
     end
 
     #QQ平台SDK集成
-    s.subspec 'QQPlatform' do |ss|
-        ss.public_header_files = 'LDSDKManager/QQPlatform/*.h','LDSDKManager/QQPlatform/**/*.h'
-        ss.source_files = 'LDSDKManager/QQPlatform/**/*.{h,m,mm}'
-        ss.vendored_frameworks = 'LDSDKManager/QQPlatform/LDQQSDK/TencentOpenAPI.framework'
-        ss.resources = ['LDSDKManager/QQPlatform/**/*.{bundle}']
-        ss.ios.frameworks = 'CoreTelephony', 'SystemConfiguration'
-        ss.ios.libraries = 'z', 'sqlite3.0', 'c++', 'iconv'
-        ss.dependency 'LDSDKManager/CoreService'
-    end
+#    s.subspec 'QQPlatform' do |ss|
+#        ss.public_header_files = 'LDSDKManager/QQPlatform/*.h','LDSDKManager/QQPlatform/**/*.h'
+#        ss.source_files = 'LDSDKManager/QQPlatform/**/*.{h,m,mm}'
+#        ss.vendored_frameworks = 'LDSDKManager/QQPlatform/LDQQSDK/TencentOpenAPI.framework'
+#        ss.resources = ['LDSDKManager/QQPlatform/**/*.{bundle}']
+#        ss.ios.frameworks = 'CoreTelephony', 'SystemConfiguration'
+#        ss.ios.libraries = 'z', 'sqlite3.0', 'c++', 'iconv'
+#        ss.dependency 'LDSDKManager/CoreService'
+#    end
 
     #微信平台SDK集成
-    s.subspec 'WechatPlatform' do |ss|
-        ss.public_header_files = 'LDSDKManager/WechatPlatform/WeChatSDK/*.h'
-        ss.source_files = 'LDSDKManager/WechatPlatform/**/*.{h,m,mm}'
-        ss.vendored_library = 'LDSDKManager/WechatPlatform/WeChatSDK/libWeChatSDK.a'
-        ss.frameworks = 'MobileCoreServices', 'SystemConfiguration'
-        ss.libraries = 'z', 'sqlite3.0', 'c++'
-        ss.dependency 'LDSDKManager/CoreService'
-    end
+#    s.subspec 'WechatPlatform' do |ss|
+#        ss.public_header_files = 'LDSDKManager/WechatPlatform/WeChatSDK/*.h'
+#        ss.source_files = 'LDSDKManager/WechatPlatform/**/*.{h,m,mm}'
+#        ss.vendored_library = 'LDSDKManager/WechatPlatform/WeChatSDK/libWeChatSDK.a'
+#        ss.frameworks = 'MobileCoreServices', 'SystemConfiguration'
+#        ss.libraries = 'z', 'sqlite3.0', 'c++'
+#        ss.dependency 'LDSDKManager/CoreService'
+#    end
 
     #易信平台SDK集成
 #    s.subspec 'YixinPlatform' do |ss|
