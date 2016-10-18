@@ -11,7 +11,7 @@
 #import "LDSDKShareService.h"
 #import "LDSDKAuthService.h"
 
-@interface LDSDKWeiboServiceImpl : NSObject <LDSDKRegisterService, LDSDKShareService>
+@interface LDSDKWeiboServiceImpl : NSObject <LDSDKAuthService, LDSDKRegisterService, LDSDKShareService>
 
 
 @end
