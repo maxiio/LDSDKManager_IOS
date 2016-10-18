@@ -23,6 +23,13 @@ typedef void (^LDSDKLoginCallback)(NSDictionary *oauthInfo, NSDictionary *userIn
 #define kQQ_EXPIRADATE_KEY @"expirationDate"
 #define kQQ_AVATARURL_KEY @"figureurl_qq_2"
 
+// 微博登录，用户信息的Key
+#define kWB_USER_ID @"userId"
+#define kWB_TOKEN_KEY @"access_token"
+#define kWB_USERINFO_KEY @"userInfo"
+#define kQQ_EXPIRADATE_KEY @"expirationDate"
+#define kQQ_AVATARURL_KEY @"figureurl_qq_2"
+
 @protocol LDSDKAuthService <NSObject>
 
 /*!

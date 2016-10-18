@@ -9,6 +9,8 @@
 #import "LDSDKWeiboServiceImpl.h"
 #import "WeiboSDK.h"
 
+
+#define kRedirectURI    @"http://www.sina.com"
 typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
 
 @interface LDSDKWeiboServiceImpl () <WeiboSDKDelegate> {
@@ -16,6 +18,8 @@ typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
     NSString *shareText;
     UIImage *shareImage;
     NSString *redirectURI;
+    NSError *error;
+    void (^MyBlock)(NSDictionary *oauthInfo, NSDictionary *userInfo, NSError *weiboerror);
 }
 
 @property (strong, nonatomic) NSString *wbtoken;
@@ -71,6 +75,69 @@ typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
+
+#pragma mark -
+#pragma mark - 登陆部分
+
+//- (BOOL)isLoginEnabledOnPlatform
+//{
+//    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:kQQPlatformLogin];
+//    if (string.length == 0) {
+//        return YES;
+//    } else {
+//        return [string boolValue];
+//    }
+//}
+
+- (void)loginToPlatformWithCallback:(LDSDKLoginCallback)callback
+{
+    if (![WeiboSDK isWeiboAppInstalled] || ![WeiboSDK isCanSSOInWeiboApp]) {
+        error = [NSError
+                 errorWithDomain:@"WeiboLogin"
+                 code:0
+                 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"请先安装微博客户端",
+                           @"NSLocalizedDescription",
+                           nil]];
+        if (callback) {
+            callback(nil, nil, error);
+        }
+        return;
+    }
+    if ([WeiboSDK isWeiboAppInstalled]) {  //手机QQ登录流程
+        
+        WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+        request.redirectURI = kRedirectURI;
+        request.scope = @"all";
+        [WeiboSDK sendRequest:request];
+        [self sendReq:request callback:^(WBBaseResponse *resp) {
+            if (callback) {
+                MyBlock = callback;
+            }
+            if ([resp isKindOfClass:[WBAuthorizeResponse class]]) {
+                WBAuthorizeResponse *response = (WBAuthorizeResponse *)resp;
+                if ([response accessToken] && 0 != [[response accessToken] length]) {
+                    NSMutableDictionary *oauthInfo = [NSMutableDictionary dictionary];
+                    [oauthInfo setObject:[response userID] forKey:kWB_USER_ID];
+                    [oauthInfo setObject:[response accessToken] forKey:kWB_TOKEN_KEY];
+                    [oauthInfo setObject:[response userInfo] forKey:kWB_USERINFO_KEY];
+                    if (MyBlock) {
+                        MyBlock(oauthInfo, nil, nil);
+                    }
+                } else {  //登录失败，没有获取授权accesstoken
+                    error = [NSError
+                             errorWithDomain:@"WeiboLogin"
+                             code:0
+                             userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"登录失败",
+                                       @"NSLocalizedDescription",
+                                       nil]];
+                    if (MyBlock) {
+                        MyBlock(nil, nil, error);
+                    }
+                }
+            }
+        }];
+    }
+}
 
 #pragma mark -
 #pragma mark - 分享部分

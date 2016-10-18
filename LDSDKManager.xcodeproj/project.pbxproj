@@ -16,6 +16,9 @@
 		508CA8D71B8729F900F3F3F8 /* LDSDKAliPayServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 508CA8D61B8729F900F3F3F8 /* LDSDKAliPayServiceImpl.m */; };
 		50EF57431B8EE86B00F0C9FB /* Icon-Netease@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF57421B8EE86B00F0C9FB /* Icon-Netease@2x.png */; };
 		583906681D3F742300EB85C0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583906661D3F738300EB85C0 /* CoreMotion.framework */; };
+		58965A821DB616E400786BC8 /* LDSDKWeiboServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 58965A731DB616E400786BC8 /* LDSDKWeiboServiceImpl.m */; };
+		58965A831DB616E400786BC8 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58965A751DB616E400786BC8 /* libWeiboSDK.a */; };
+		58965A841DB616E400786BC8 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 58965A7F1DB616E400786BC8 /* WeiboSDK.bundle */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		620A13911B8AED7C00DFBCF8 /* SDKServiceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 620A13901B8AED7C00DFBCF8 /* SDKServiceConfig.plist */; };
@@ -65,6 +68,21 @@
 		508CA8D61B8729F900F3F3F8 /* LDSDKAliPayServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSDKAliPayServiceImpl.m; sourceTree = "<group>"; };
 		50EF57421B8EE86B00F0C9FB /* Icon-Netease@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Netease@2x.png"; sourceTree = "<group>"; };
 		583906661D3F738300EB85C0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		58965A721DB616E400786BC8 /* LDSDKWeiboServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSDKWeiboServiceImpl.h; sourceTree = "<group>"; };
+		58965A731DB616E400786BC8 /* LDSDKWeiboServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSDKWeiboServiceImpl.m; sourceTree = "<group>"; };
+		58965A751DB616E400786BC8 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		58965A761DB616E400786BC8 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
+		58965A771DB616E400786BC8 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
+		58965A781DB616E400786BC8 /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		58965A791DB616E400786BC8 /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
+		58965A7A1DB616E400786BC8 /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		58965A7B1DB616E400786BC8 /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
+		58965A7C1DB616E400786BC8 /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
+		58965A7D1DB616E400786BC8 /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
+		58965A7E1DB616E400786BC8 /* WeiboSDK+Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeiboSDK+Statistics.h"; sourceTree = "<group>"; };
+		58965A7F1DB616E400786BC8 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		58965A801DB616E400786BC8 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		58965A811DB616E400786BC8 /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
 		58F84A761D3F6EEE00ACFC7A /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LDSDKManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDSDKManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +145,7 @@
 				62AAD3CE1B85A10300C5E983 /* libWeChatSDK.a in Frameworks */,
 				62AAD3B51B85A10300C5E983 /* AlipaySDK.framework in Frameworks */,
 				62AAD3DF1B85A78F00C5E983 /* SystemConfiguration.framework in Frameworks */,
+				58965A831DB616E400786BC8 /* libWeiboSDK.a in Frameworks */,
 				62AAD3DD1B85A6C700C5E983 /* MobileCoreServices.framework in Frameworks */,
 				62AAD3DB1B85A66B00C5E983 /* libc++.dylib in Frameworks */,
 				62AAD3D91B85A65700C5E983 /* libz.dylib in Frameworks */,
@@ -146,6 +165,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58965A711DB616E400786BC8 /* WeiboPlatform */ = {
+			isa = PBXGroup;
+			children = (
+				58965A721DB616E400786BC8 /* LDSDKWeiboServiceImpl.h */,
+				58965A731DB616E400786BC8 /* LDSDKWeiboServiceImpl.m */,
+				58965A741DB616E400786BC8 /* libWeiboSDK */,
+			);
+			path = WeiboPlatform;
+			sourceTree = "<group>";
+		};
+		58965A741DB616E400786BC8 /* libWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				58965A751DB616E400786BC8 /* libWeiboSDK.a */,
+				58965A761DB616E400786BC8 /* WBHttpRequest+WeiboGame.h */,
+				58965A771DB616E400786BC8 /* WBHttpRequest+WeiboShare.h */,
+				58965A781DB616E400786BC8 /* WBHttpRequest+WeiboToken.h */,
+				58965A791DB616E400786BC8 /* WBHttpRequest+WeiboUser.h */,
+				58965A7A1DB616E400786BC8 /* WBHttpRequest.h */,
+				58965A7B1DB616E400786BC8 /* WBSDKBasicButton.h */,
+				58965A7C1DB616E400786BC8 /* WBSDKCommentButton.h */,
+				58965A7D1DB616E400786BC8 /* WBSDKRelationshipButton.h */,
+				58965A7E1DB616E400786BC8 /* WeiboSDK+Statistics.h */,
+				58965A7F1DB616E400786BC8 /* WeiboSDK.bundle */,
+				58965A801DB616E400786BC8 /* WeiboSDK.h */,
+				58965A811DB616E400786BC8 /* WeiboUser.h */,
+			);
+			path = libWeiboSDK;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +301,7 @@
 		62AAD3651B85A10300C5E983 /* LDSDKManager */ = {
 			isa = PBXGroup;
 			children = (
+				58965A711DB616E400786BC8 /* WeiboPlatform */,
 				62AAD3D61B85A62B00C5E983 /* LDSDKManager.podspec */,
 				62AAD36E1B85A10300C5E983 /* CoreService */,
 				62AAD37A1B85A10300C5E983 /* QQPlatform */,
@@ -434,6 +484,7 @@
 				620A13911B8AED7C00DFBCF8 /* SDKServiceConfig.plist in Resources */,
 				62AAD3B41B85A10300C5E983 /* AlipaySDK.bundle in Resources */,
 				62AAD3BE1B85A10300C5E983 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				58965A841DB616E400786BC8 /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +555,7 @@
 				62AAD3631B85A0BD00C5E983 /* Tests.m in Sources */,
 				62AAD3591B85A01F00C5E983 /* main.m in Sources */,
 				62AAD3561B85A01F00C5E983 /* LDAppDelegate.m in Sources */,
+				58965A821DB616E400786BC8 /* LDSDKWeiboServiceImpl.m in Sources */,
 				620A139C1B8AED9200DFBCF8 /* UIImage+LDSDKShare.m in Sources */,
 				62AAD3CD1B85A10300C5E983 /* NSString+LDSDKAdditions.m in Sources */,
 				508CA8D71B8729F900F3F3F8 /* LDSDKAliPayServiceImpl.m in Sources */,
@@ -622,6 +674,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LDSDKManager/WechatPlatform/WeChatSDK",
+					"$(PROJECT_DIR)/LDSDKManager/WeiboPlatform/libWeiboSDK",
 				);
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = "-all_load";
@@ -652,6 +705,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LDSDKManager/WechatPlatform/WeChatSDK",
+					"$(PROJECT_DIR)/LDSDKManager/WeiboPlatform/libWeiboSDK",
 				);
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = "-all_load";

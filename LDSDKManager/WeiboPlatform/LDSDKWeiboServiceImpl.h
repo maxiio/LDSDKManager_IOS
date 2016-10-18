@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "LDSDKRegisterService.h"
 #import "LDSDKShareService.h"
+#import "LDSDKAuthService.h"
 
 @interface LDSDKWeiboServiceImpl : NSObject <LDSDKRegisterService, LDSDKShareService>
+
 
 @end
