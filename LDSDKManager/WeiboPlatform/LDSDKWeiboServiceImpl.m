@@ -10,7 +10,7 @@
 #import "WeiboSDK.h"
 
 
-#define kRedirectURI    @"http://www.sina.com"
+#define kRedirectURI    @"http://www.maishoudang.com/"
 typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
 
 @interface LDSDKWeiboServiceImpl () <WeiboSDKDelegate> {
@@ -79,18 +79,18 @@ typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
 #pragma mark -
 #pragma mark - 登陆部分
 
-//- (BOOL)isLoginEnabledOnPlatform
-//{
+- (BOOL)isLoginEnabledOnPlatform
+{
 //    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:kQQPlatformLogin];
 //    if (string.length == 0) {
 //        return YES;
 //    } else {
 //        return [string boolValue];
 //    }
-//}
+    return YES;
+}
 
-- (void)loginToPlatformWithCallback:(LDSDKLoginCallback)callback
-{
+- (void)loginToPlatformWithCallback:(LDSDKLoginCallback)callback {
     if (![WeiboSDK isWeiboAppInstalled] || ![WeiboSDK isCanSSOInWeiboApp]) {
         error = [NSError
                  errorWithDomain:@"WeiboLogin"
@@ -137,6 +137,9 @@ typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
             }
         }];
     }
+}
+
+- (void)logoutFromPlatform {
 }
 
 #pragma mark -
