@@ -13,7 +13,7 @@
 #define kRedirectURI    @"http://www.maishoudang.com/auth/weibo/callback"
 typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
 
-@interface LDSDKWeiboServiceImpl () <WeiboSDKDelegate> {
+@interface LDSDKWeiboServiceImpl () <WeiboSDKDelegate,WBHttpRequestDelegate> {
     BOOL isRegistered;
     NSString *shareText;
     UIImage *shareImage;
@@ -123,6 +123,13 @@ typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
                     if (MyBlock) {
                         MyBlock(oauthInfo, nil, nil);
                     }
+                    
+                    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+                    [params setObject:[response accessToken] forKey:@"access_token"];
+                    [params setObject:[response userID] forKey:@"uid"];
+                    
+                    [WBHttpRequest requestWithURL:@"https://api.weibo.com/2/users/show.json" httpMethod:@"GET" params:params delegate:self withTag:@"Me"];
+                    
                 } else {  //登录失败，没有获取授权accesstoken
                     error = [NSError
                              errorWithDomain:@"WeiboLogin"
@@ -139,8 +146,30 @@ typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
     }
 }
 
+-(void)request:(WBHttpRequest *)request didFinishLoadingWithResult:(NSString *)result
+{
+    NSData *data=[result dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *userInfo=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    if (userInfo && 0 != [userInfo count]) {
+        MyBlock(nil, userInfo, nil);
+    }
+    else
+    {
+        error = [NSError
+                 errorWithDomain:@"WeiboLogin"
+                 code:0
+                 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"登录失败",
+                           @"NSLocalizedDescription",
+                           nil]];
+        if (MyBlock) {
+            MyBlock(nil, nil, error);
+        }
+    }
+}
+
 - (void)logoutFromPlatform {
 }
+
 
 #pragma mark -
 #pragma mark - 分享部分
