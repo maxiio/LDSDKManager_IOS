@@ -10,7 +10,7 @@
 #import "WeiboSDK.h"
 
 
-#define kRedirectURI    @"http://www.maishoudang.com/"
+#define kRedirectURI    @"http://www.maishoudang.com/auth/weibo/callback"
 typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
 
 @interface LDSDKWeiboServiceImpl () <WeiboSDKDelegate> {
