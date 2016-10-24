@@ -107,12 +107,7 @@ static NSArray *permissions = nil;
 
 - (BOOL)isLoginEnabledOnPlatform
 {
-    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:kQQPlatformLogin];
-    if (string.length == 0) {
-        return YES;
-    } else {
-        return [string boolValue];
-    }
+    return [QQApiInterface isQQInstalled];
 }
 
 - (void)loginToPlatformWithCallback:(LDSDKLoginCallback)callback

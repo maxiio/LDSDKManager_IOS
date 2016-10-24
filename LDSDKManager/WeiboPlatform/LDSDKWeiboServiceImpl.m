@@ -81,13 +81,7 @@ typedef void (^LDWeiboCallbackBlock)(WBBaseResponse *resp);
 
 - (BOOL)isLoginEnabledOnPlatform
 {
-//    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:kQQPlatformLogin];
-//    if (string.length == 0) {
-//        return YES;
-//    } else {
-//        return [string boolValue];
-//    }
-    return YES;
+    return [WeiboSDK isWeiboAppInstalled];
 }
 
 - (void)loginToPlatformWithCallback:(LDSDKLoginCallback)callback {

@@ -105,12 +105,7 @@
 
 - (BOOL)isLoginEnabledOnPlatform
 {
-    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:kWXPlatformLogin];
-    if (string.length == 0) {
-        return [self isPlatformAppInstalled] && [self isRegistered];
-    } else {
-        return [string boolValue] && [self isPlatformAppInstalled] && [self isRegistered];
-    }
+    return [WXApi isWXAppInstalled];
 }
 
 - (void)loginToPlatformWithCallback:(LDSDKLoginCallback)callback
