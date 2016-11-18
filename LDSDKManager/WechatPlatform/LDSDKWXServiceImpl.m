@@ -556,17 +556,17 @@ LDSDKAFPercentEscapedQueryStringValueFromStringWithEncoding(NSString *string,
             NSError *error = nil;
             
             PayResp *pResp = (PayResp *)resp;
-            if ([resp.errStr isEqualToString:@"0"]) {
+            if (resp.errCode == 0) {
                 pResp.returnKey = @"成功";
             }
-            else if ([resp.errStr isEqualToString:@"-1"]) {
+            else if (resp.errCode == -1) {
                 pResp.errStr = @"错误";
                 error = [NSError errorWithDomain:@"wxPay"
                                             code:resp.errCode
                                         userInfo:[NSDictionary
                                                   dictionaryWithObjectsAndKeys:resp.errStr, @"NSLocalizedDescription", nil]];
             }
-            else if ([resp.errStr isEqualToString:@"-2"]) {
+            else if (resp.errCode == -2) {
                 pResp.errStr = @"用户取消";
                 
                 error = [NSError errorWithDomain:@"wxPay"
