@@ -27,14 +27,14 @@
      */
     NSArray *regPlatformConfigList = @[
                                        @{
-                                           LDSDKConfigAppIdKey:@"wxdb0c3a0c4bbf44e3",
-                                           LDSDKConfigAppSecretKey:@"95b34122e7290936191dee31f28e52ae",
+                                           LDSDKConfigAppIdKey:@"",
+                                           LDSDKConfigAppSecretKey:@"",
                                            LDSDKConfigAppDescriptionKey:@"应用描述",
                                            LDSDKConfigAppPlatformTypeKey:@(LDSDKPlatformWeChat)
                                            },
                                        @{
-                                           LDSDKConfigAppIdKey:@"1105102570",
-                                           LDSDKConfigAppSecretKey:@"V29vITojtdBrVe01",
+                                           LDSDKConfigAppIdKey:@"",
+                                           LDSDKConfigAppSecretKey:@"",
                                            LDSDKConfigAppPlatformTypeKey:@(LDSDKPlatformQQ)
                                            },
                                        @{

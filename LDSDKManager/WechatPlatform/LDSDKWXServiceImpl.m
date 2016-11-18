@@ -552,8 +552,30 @@ LDSDKAFPercentEscapedQueryStringValueFromStringWithEncoding(NSString *string,
 #endif
     if (_wxCallback) {
         if ([resp isKindOfClass:[PayResp class]]) {
+            
+            NSError *error = nil;
+            
             PayResp *pResp = (PayResp *)resp;
-            _wxCallback(pResp.returnKey, nil);
+            if ([resp.errStr isEqualToString:@"0"]) {
+                pResp.returnKey = @"成功";
+            }
+            else if ([resp.errStr isEqualToString:@"-1"]) {
+                pResp.errStr = @"错误";
+                error = [NSError errorWithDomain:@"wxPay"
+                                            code:resp.errCode
+                                        userInfo:[NSDictionary
+                                                  dictionaryWithObjectsAndKeys:resp.errStr, @"NSLocalizedDescription", nil]];
+            }
+            else if ([resp.errStr isEqualToString:@"-2"]) {
+                pResp.errStr = @"用户取消";
+                
+                error = [NSError errorWithDomain:@"wxPay"
+                                            code:resp.errCode
+                                        userInfo:[NSDictionary
+                                                  dictionaryWithObjectsAndKeys:resp.errStr, @"NSLocalizedDescription", nil]];
+            }
+            
+            _wxCallback(pResp.returnKey, error);
         } else {
             NSError *error = [NSError
                 errorWithDomain:@"wxPay"
