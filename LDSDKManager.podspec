@@ -63,12 +63,12 @@ Pod::Spec.new do |s|
     s.subspec 'AlipayPlatform' do |ss|
         ss.public_header_files = 'LDSDKManager/AlipayPlatform/*.h','LDSDKManager/AlipayPlatform/**/*.h'
         ss.source_files = 'LDSDKManager/AlipayPlatform/**/*{h,m,mm}'
-      	ss.vendored_frameworks = 'AlipaySDK/AlipaySDK.framework'
-        ss.resources = ['AlipaySDK/**/*.{bundle}']
+#      	ss.vendored_frameworks = 'AlipaySDK/AlipaySDK.framework'
+#       ss.resources = ['AlipaySDK/**/*.{bundle}']
         ss.frameworks = 'SystemConfiguration'
         ss.dependency 'LDSDKManager/CoreService'
     end
 
     s.frameworks = 'UIKit', 'CoreGraphics', 'Foundation', 'CoreMotion'
-    s.dependency 'AlipaySDK', '~> 2.0.0-bc'
+    s.dependency 'AlipaySDK'
 end
