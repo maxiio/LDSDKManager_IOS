@@ -70,5 +70,5 @@ Pod::Spec.new do |s|
     end
 
     s.frameworks = 'UIKit', 'CoreGraphics', 'Foundation', 'CoreMotion'
-    s.dependency 'AlipaySDK'
+    s.dependency 'AlipaySDK', '~> 2.0.0-bc'
 end
